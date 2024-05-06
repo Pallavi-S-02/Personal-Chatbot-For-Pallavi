@@ -5,8 +5,9 @@
 This is a personalized chatbot specifically designed for Pallavi. It leverages the power of the Gemini Pro large language model (LLM) to deliver intelligent and engaging conversation experiences.
 
 ### Key Features:
+**<span style="font-weight: bold;">H</span>ello**, this is a sentence with the first letter bolded.
 
-1. Personalization: Tailored to Pallavi's preferences and interests, leading to more meaningful interactions.
+1. ## Personalization## : Tailored to Pallavi's preferences and interests, leading to more meaningful interactions.
 2. Gemini Pro LLM: Employs the capabilities of a powerful LLM for comprehensive understanding and response generation.
 3. LangChain Integration: Seamlessly integrates with LangChain for efficient and structured information retrieval.
 4. Google Embeddings: Utilizes Google Embeddings to capture semantic relationships between words, enhancing the chatbot's ability to grasp context and intent.
