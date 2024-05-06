@@ -11,6 +11,9 @@ This is a personalized chatbot specifically designed for Pallavi. It leverages t
 
 **<span style="font-weight: 700;">H</span>ello**, this is a sentence with the first letter more boldly emphasized.
 
+<span style="font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">H</span>ello, this is a sentence with the first letter more boldly emphasized.
+
+
 
 
 1. ## Personalization## : Tailored to Pallavi's preferences and interests, leading to more meaningful interactions.
