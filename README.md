@@ -6,6 +6,12 @@ This is a personalized chatbot specifically designed for Pallavi. It leverages t
 
 ### Key Features:
 **<span style="font-weight: bold;">H</span>ello**, this is a sentence with the first letter bolded.
+**<span style="font-weight: 900;">H</span>ello**, this is a sentence with the first letter more boldly emphasized.
+**<span style="font-weight: 800;">H</span>ello**, this is a sentence with the first letter more boldly emphasized.
+
+**<span style="font-weight: 700;">H</span>ello**, this is a sentence with the first letter more boldly emphasized.
+
+
 
 1. ## Personalization## : Tailored to Pallavi's preferences and interests, leading to more meaningful interactions.
 2. Gemini Pro LLM: Employs the capabilities of a powerful LLM for comprehensive understanding and response generation.
