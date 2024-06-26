@@ -10,7 +10,8 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import google.generativeai as genai
 from langchain_community.retrievers import BM25Retriever
 from langchain.retrievers import EnsembleRetriever
-from langchain_google_genai import ChatGoogleGenerativeAI
+#from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 import os
 import streamlit as st
@@ -18,6 +19,7 @@ import base64
 
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+groq_api_key = os.getenv("GROQ_API_KEY")
 
 def load_pdf_file(pdf): #pdf=bio.pdf
     data_file = UnstructuredPDFLoader(pdf)
@@ -36,7 +38,8 @@ def create_chunks_and_embeddings(docs):
     return ensemble_retriever
 
 def load_llm():
-    llm = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.6)
+    #llm = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.6)
+    llm = ChatGroq(temperature=0.6, groq_api_key=groq_api_key, model_name="llama3-70b-8192")
     return llm
 
 def create_prompt_template(ensemble_retriever, llm):
