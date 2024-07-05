@@ -12,3 +12,4 @@ langchain-community==0.0.19
 langchain_groq
 opencv-python-headless
 pysqlite3-binary
+psutil
