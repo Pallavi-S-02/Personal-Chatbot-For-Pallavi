@@ -8,7 +8,8 @@ from chatbot import load_pdf_file, create_chunks_and_embeddings, load_llm, creat
 
 def main():
     st.set_page_config(page_title="Chat with Pallavi")
-    st.header("*:White[Feel free to know more about Pallavi]*")
+    #st.header("*:White[Feel free to know more about Pallavi]*")
+    st.header("**Feel free to know more about Pallavi**")
     st.markdown("<h5 style='color: #0000CD;'>You can ask me a question and my personal AI will answer you</h5>", unsafe_allow_html=True)
     
     user_question = st.text_input("Type your question below", "")
