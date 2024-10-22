@@ -16,6 +16,9 @@ from dotenv import load_dotenv
 import os
 import streamlit as st
 import base64
+import chromadb
+
+chromadb.api.client.SharedSystemClient.clear_system_cache()
 
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
