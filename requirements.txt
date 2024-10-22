@@ -13,4 +13,3 @@ langchain_groq
 opencv-python-headless
 pysqlite3-binary
 psutil
-torch==2.5.0
