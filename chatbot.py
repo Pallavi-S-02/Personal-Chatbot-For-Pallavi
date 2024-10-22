@@ -18,8 +18,6 @@ import streamlit as st
 import base64
 import chromadb
 
-chromadb.api.client.SharedSystemClient.clear_system_cache()
-
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 groq_api_key = os.getenv("GROQ_API_KEY")
@@ -34,6 +32,7 @@ def create_chunks_and_embeddings(docs):
     chunks = splitter.split_documents(docs)
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
     vectorstore = Chroma.from_documents(chunks, embeddings)
+    chromadb.api.client.SharedSystemClient.clear_system_cache()
     vectorstore_retreiver = vectorstore.as_retriever(search_kwargs={"k": 3})    
     keyword_retriever = BM25Retriever.from_documents(chunks)
     keyword_retriever.k =  3    
