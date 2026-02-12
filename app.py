@@ -1,6 +1,6 @@
-#__import__('pysqlite3')
-#import sys
-#sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 import streamlit as st
 from chatbot import get_base64
@@ -99,6 +99,7 @@ def main():
     st.markdown("</div>", unsafe_allow_html=True)
 
 main()
+
 
 
 
