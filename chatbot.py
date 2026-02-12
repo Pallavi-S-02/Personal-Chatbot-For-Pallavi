@@ -32,7 +32,8 @@ import google.generativeai as genai
 #from langchain_community.retrievers import BM25Retriever
 from langchain_community.retrievers import BM25Retriever
 #from langchain_community.retrievers import EnsembleRetriever
-from langchain.retrievers import EnsembleRetriever
+#from langchain.retrievers import EnsembleRetriever
+from langchain_core.retrievers import EnsembleRetriever
 #from langchain.retrievers import EnsembleRetriever
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
@@ -115,6 +116,7 @@ def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
     return base64.b64encode(data).decode()
+
 
 
 
