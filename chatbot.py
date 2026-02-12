@@ -1,6 +1,6 @@
 #Google Embeddings, Gemini Pro, BM25 RAG with Ensemble.
-
-from langchain_community.document_loaders import UnstructuredPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
+#from langchain_community.document_loaders import UnstructuredPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_core.prompts import ChatPromptTemplate
@@ -22,10 +22,18 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 groq_api_key = os.getenv("GROQ_API_KEY")
 
+'''
 def load_pdf_file(pdf): #pdf=bio.pdf
     data_file = UnstructuredPDFLoader(pdf)
     docs = data_file.load()
     return docs
+'''
+
+def load_pdf_file(pdf):
+    data_file = PyPDFLoader(pdf)
+    docs = data_file.load()
+    return docs
+
 
 def create_chunks_and_embeddings(docs):
     splitter = RecursiveCharacterTextSplitter(chunk_size=800,chunk_overlap=100)
@@ -84,6 +92,7 @@ def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
     return base64.b64encode(data).decode()
+
 
 
 
