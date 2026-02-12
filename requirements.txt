@@ -13,4 +13,3 @@ pypdf
 pillow
 opencv-python-headless
 unstructured
-python-magic-bin
