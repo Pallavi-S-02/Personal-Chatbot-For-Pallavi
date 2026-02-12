@@ -30,9 +30,7 @@ def load_pdf_file(pdf): #pdf=bio.pdf
 def create_chunks_and_embeddings(docs):
     splitter = RecursiveCharacterTextSplitter(chunk_size=800,chunk_overlap=100)
     chunks = splitter.split_documents(docs)
-    #embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
-    embeddings = GoogleGenerativeAIEmbeddings(model = "models/text-embedding-004")
-
+    embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
     vectorstore = Chroma.from_documents(chunks, embeddings)
     chromadb.api.client.SharedSystemClient.clear_system_cache()
     vectorstore_retreiver = vectorstore.as_retriever(search_kwargs={"k": 3})    
@@ -85,4 +83,5 @@ def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
     return base64.b64encode(data).decode()
+
 
