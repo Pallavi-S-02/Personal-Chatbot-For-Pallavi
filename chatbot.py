@@ -1,4 +1,3 @@
-'''
 #Google Embeddings, Gemini Pro, BM25 RAG with Ensemble.
 from langchain_community.document_loaders import PyPDFLoader
 #from langchain_community.document_loaders import UnstructuredPDFLoader
@@ -19,29 +18,8 @@ import os
 import streamlit as st
 import base64
 import chromadb
-'''
 
-from langchain_community.document_loaders import UnstructuredPDFLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter  # Updated import
-from langchain_community.vectorstores import Chroma
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
-from langchain_core.runnables import RunnablePassthrough
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
-import google.generativeai as genai
-#from langchain_community.retrievers import BM25Retriever
-from langchain_community.retrievers import BM25Retriever
-#from langchain_community.retrievers import EnsembleRetriever
-#from langchain.retrievers import EnsembleRetriever
-from langchain.retrievers.ensemble import EnsembleRetriever
-#from langchain_core.retrievers import EnsembleRetriever
-#from langchain.retrievers import EnsembleRetriever
-from langchain_groq import ChatGroq
-from dotenv import load_dotenv
-import os
-import streamlit as st
-import base64
-import chromadb
+
 
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
@@ -117,6 +95,7 @@ def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
     return base64.b64encode(data).decode()
+
 
 
 
