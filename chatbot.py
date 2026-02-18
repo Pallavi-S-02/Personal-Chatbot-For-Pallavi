@@ -1,8 +1,8 @@
 #Google Embeddings, Gemini Pro, BM25 RAG with Ensemble.
 from langchain_community.document_loaders import PyPDFLoader
 #from langchain_community.document_loaders import UnstructuredPDFLoader
-#from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+#from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -95,6 +95,7 @@ def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
     return base64.b64encode(data).decode()
+
 
 
 
